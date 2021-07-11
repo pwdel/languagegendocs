@@ -27,6 +27,9 @@ Author: Patrick Delaney, July 2021
 * User classes separated into admin, sponsor and editors, with the admin having the capability to approve or reject the other two types of users prior to their activation within the system, allowing built-in resource protection.
 * Built-in common security vulnerability prevention, which flask does not come with, "out of the box," with a full analysis of which security protections have been put in place and which have not at this stage of the app, and recommendations for further steps including but not limited to: 1. Decorated Routes which restrict access to certain routes to specified user types with a simple decorator. 2. 403 Error handling. 3. XSS, Cross Site Scripting protection. 4. CSRF Cross-Site Request Forgery protection. 5.SQL Injection Prohibition. 6. Directory Transversal Protection. 7. XSS Uploaded Files. 8. JSON Security. 9. Flask Security Headers. 10. Cookie Protection. 11. X content Type Options. 12. X-Frame Options. 13. X-XSS Protection. 14. HTTP Public Key Pinning. 15. Terminal Copy Paste Protection.
 * Full review of all security considerations can be found [here](https://github.com/pwdel/flasksecurity#reviewing-flask-security-considerations).
+* Flash shell to allow arbitrary database commands.
+* SQLAlchemy integration for use with Postgres.
+* Initial non-user state for greater security, e.g. initial user only created on the server itself via human command.
 
 ## System Requirements
 
@@ -167,9 +170,15 @@ Which, if you visit in your browser should bring up the main front-end, endpoint
 
 ![](/img/loginpage.png)
 
-The application is designed to be secured through a multi user-type categorization, which means that an administrator user type has the capability to accept or reject other user types prior to their application access.
+The application is designed to be secured through a multi user-type categorization, which means that an administrator user type has the capability to accept or reject other user types prior to their application access. However in development mode, we have a pre-set administrator user which can be accessed via the /login page with the following credentials:
 
+```
+user: admin@test.com
+password: password
+```
 
+1. Login to Postgres to check database.
+2. Login to flask shell, add admin user with arbitrary password.
 
 # How to Use
 
