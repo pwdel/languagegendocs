@@ -2,7 +2,15 @@
 
 # Repos Covered and General Description
 
+## Repo Description
 
+| Item                        | Link                                           | Description                                                                                                                                                                            |
+|-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
+
+
+
+System Requirements
 
 # Getting Started
 
@@ -46,6 +54,29 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 $ sudo docker run hello-world
 
 ```
+Beyond the docker engine, docker-compose is also necessary. To install docker-compose, follow the instructions for Ubuntu at [this link](https://docs.docker.com/compose/install/).
 
+Or, for a quickstart guide, follow the below (as of 11 Jul 2021).
+
+```
+# download the current stable release of docker-compose.
+
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# apply executable permissions to the binary
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+# to test installation, check the version. The version and build should pop up if installed correctly.
+
+$ docker-compose --version
+
+```
+Once you have installed docker-compose correctly, you can then run the actual application, by navigating to the root folder within your terminal and running the below command. The root folder is defined as the folder which contains docker-compose.yml:
+
+```
+#
 
 $ sudo docker-compose up --detach --build web
+
+```
