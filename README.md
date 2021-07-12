@@ -1,3 +1,7 @@
+
+
+
+
 # Language Generator Programs Documentation
 
 Author: Patrick Delaney, July 2021
@@ -212,11 +216,16 @@ https://user-images.githubusercontent.com/13304149/125302671-c7ae0b80-e2f1-11eb-
 
 ### Viewing and Editing Previously Created Documents
 
+https://user-images.githubusercontent.com/13304149/125322446-6a22ba80-e303-11eb-9580-1784bccc8858.mp4
+
 
 ### Playing the Editor Role
 
+https://user-images.githubusercontent.com/13304149/125322553-8888b600-e303-11eb-8b1d-49bbf5f033c2.mp4
 
 ### Allowing Pending Users
+
+https://user-images.githubusercontent.com/13304149/125322643-9d654980-e303-11eb-8a81-3d6a9d8a0a0f.mp4
 
 
 
