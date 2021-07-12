@@ -4,9 +4,9 @@
 
 # Language Generator Programs Documentation
 
-https://img.shields.io/badge/flask-v1.1.2-blue
 
-<img src="https://camo.githubusercontent.com/a91b4f5528c26920b6b8fa617267a7193a5bddd70a4d013dcf616c91af39fc22/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f7665726167652d38302532352d79656c6c6f77677265656e" alt="coverage" data-canonical-src="https://img.shields.io/badge/coverage-80%25-yellowgreen" style="max-width:100%;">
+
+<img src="" alt="" data-canonical-src="https://img.shields.io/badge/flask-v1.1.2-blue" style="max-width:100%;">
 
 
 
