@@ -1,4 +1,3 @@
-
 # Language Generator Programs Documentation
 
 Author: Patrick Delaney, July 2021
@@ -209,6 +208,7 @@ Pending users
 
 ### Generating Text
 
+https://user-images.githubusercontent.com/13304149/125302671-c7ae0b80-e2f1-11eb-8dbe-c770defa6afa.mp4
 
 ### Viewing and Editing Previously Created Documents
 
