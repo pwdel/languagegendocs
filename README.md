@@ -19,13 +19,15 @@ Author: Patrick Delaney, July 2021
 
 ## Repo Description
 
-### General Description
+### Link to Repo
 
 | Item                        | Link                                           | Description                                                                                                                                                                            |
 |-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
 
 <hr>
+
+### General Description
 
 * Simply put, this application generates text using GPT2 into an organized system that would allow humans to edit the odd, information-less machine generated text into working information. In other words, it's a cyborg text generation application.
 * The app uses a combination of GPT2 and Flask integrated with Postgres to accomplish the above. The reason Flask was used is because of its flexibility and suitability for Machine Learning.
