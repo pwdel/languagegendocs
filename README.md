@@ -2,6 +2,8 @@
 
 Author: Patrick Delaney, July 2021
 
+##### Dependencies
+
 | Description / Purpose | Badge                                                                                                                             | Note |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|------|
 | Language Models       | ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         | |
@@ -27,14 +29,14 @@ Author: Patrick Delaney, July 2021
 
 <hr>
 
-### General Description
+### Functionality Description
 
 * Simply put, this application generates text using GPT2 into an organized system that would allow humans to edit the odd, information-less machine generated text into working information. In other words, it's a cyborg text generation application.
 * The app uses a combination of GPT2 and Flask integrated with Postgres to accomplish the above. The reason Flask was used is because of its flexibility and suitability for Machine Learning.
 * The main challenge (but at the same time advantage) in designing this app to the point where it is at is that Flask is more or less a blank slate, which while allowing a developer to implement their own database structures and source code wherever they would like into the ad-hoc platform, also requires a lot of dependencies and structure to be built from scratch. While getting flask up and going is relatively easy to begin with, there is not a lot of documentation on how to really architect many types of applications, so work and thought needs to be put in.
 * In the future this application could be further adapted to write an arbitrarily defined length of text, fine-tuned from a group of text bodies scraped from the web. Basically the idea would be to have a sponsor scrape a bunch of text using a search functionality, auto-generate machine text on a defined knowledgebase, and then pay for a human editor to perfect said text...hence, "cyborg text generation."
 
-### Main Breakdown of Features
+### Breakdown of Features
 
 * Built in python-flask, which is a largely, "from scratch," platform which allows source code to be embedded within the application project structure, making it superior for machine learning or language processing/generation applications. [Python is widely used in machine learning applications, flask is a web application platform which does not restrict database architecture or project folder structure to any particular layout, as would be the case in for example, python-django.]
 * User classes separated into admin, sponsor and editors, with the admin having the capability to approve or reject the other two types of users prior to their activation within the system, allowing built-in resource protection.
