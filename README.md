@@ -60,7 +60,9 @@ The main link to the repo being referenced in this documentation is immediately 
 |-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
 
-That being said, there are several, "breadcrumb," applications which preceded this application, building in various milestones of functionality along the way. For anyone who uses this application but may wish to fork off at a prior point along the build, they may want to reference one of the following endpoints:
+That being said, there are several, "breadcrumb," applications which preceded this application, building in various milestones of functionality along the way. For anyone who uses this application but may wish to fork off at a prior point along the build, they may want to reference one of the following endpoints.
+
+Note, the following endpoints are ordered in reverse-sophistication, with the lower repos on the list being more basic and, "earlier," in the process:
 
 |              Item              |                                             Link                                             |                                           Description                                          |
 |:------------------------------:|:--------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------:|
