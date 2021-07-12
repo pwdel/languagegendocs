@@ -5,7 +5,7 @@
 # Language Generator Programs Documentation
 
 
-https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask
+![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask)
 
 
 
