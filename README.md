@@ -181,7 +181,20 @@ Upon logging in as an administrator, the main dashboard shows a couple different
 
 ![](/img/admindashboard.png)
 
-However, in order to see any pending issues or data within those options, we have to go back to the main sign-in page and request to sign up either as a sponsor or as an editor.
+However, in order to see any pending issues or data within the, "Signup Requests Dashboard" option, we have to go back to the main sign-in page and request to sign up either as a sponsor or as an editor.
+
+There are a couple of ready-made pre-approved sponsor and editor users on development mode which can be used to log in immediately:
+
+```
+# sponsor user
+user: test@test.com
+password: 123456
+
+# editor user
+user: editor@test.com
+password: 123456
+
+```
 
 Logging out and returning to the front page, by clicking the, "Sign Up as Sponsor," link we can go in and create a requested sponsor-user.
 
