@@ -4,11 +4,11 @@ Author: Patrick Delaney, July 2021
 
 | Description / Purpose | Badge                                                                                                                             | Note |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|------|
-| Language Models       | ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         |------|
-| DNN Toolkit           | ![](https://img.shields.io/badge/tensorflow-2.2-blue)                                                                             |------|
-| Web App               | ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) |------|
-| Database Mapper       | ![](https://img.shields.io/badge/SQLAlchemy-2.4.1-blue)                                                                           |------|
-| Container Image       | ![](https://img.shields.io/badge/docker--python-3.8--slim-brightgreen)                                                            |------|
+| Language Models       | ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         | |
+| DNN Toolkit           | ![](https://img.shields.io/badge/tensorflow-2.2-blue)                                                                             | |
+| Web App               | ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) | |
+| Database Mapper       | ![](https://img.shields.io/badge/SQLAlchemy-2.4.1-blue)                                                                           | |
+| Container Image       | ![](https://img.shields.io/badge/docker--python-3.8--slim-brightgreen)                                                            | |
 | Database Adapter      | ![](https://img.shields.io/badge/psycopg2--binary-2.8.6-red)                                                                      |Do not use binary for production.|
 
 # Table of Contents
