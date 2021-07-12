@@ -17,7 +17,36 @@ Patrick Delaney, July 2021
 
 # Table of Contents
 
-
+- [Repos Covered and General Description](#repos-covered-and-general-description)
+  * [Repo Description](#repo-description)
+    + [Link to Repo](#link-to-repo)
+    + [Functionality Description](#functionality-description)
+    + [Breakdown of Features](#breakdown-of-features)
+  * [System Requirements](#system-requirements)
+    + [Highlighted Dependencies](#highlighted-dependencies)
+    + [Docker](#docker)
+  * [Behind the Scenes](#behind-the-scenes)
+    + [Motivation](#motivation)
+    + [Why Build this Project](#why-build-this-project)
+    + [What Problems this Solves](#what-problems-this-solves)
+    + [Learned Along the Way](#learned-along-the-way)
+- [Getting Started - How to Install and Run](#getting-started---how-to-install-and-run)
+  * [Quickstart on Ubuntu](#quickstart-on-ubuntu)
+    + [Ubuntu Install](#ubuntu-install)
+    + [Application Build](#application-build)
+    + [Usage of Web Interface in Development Mode](#usage-of-web-interface-in-development-mode)
+      - [Generating Text](#generating-text)
+      - [Viewing and Editing Previously Created Documents](#viewing-and-editing-previously-created-documents)
+      - [Playing the Editor Role](#playing-the-editor-role)
+    + [Role Authentication](#role-authentication)
+    + [Allowing Pending Users](#allowing-pending-users)
+- [Project Structure for Machine Learning](#project-structure-for-machine-learning)
+  * [Word on Monolithic Applications](#word-on-monolithic-applications)
+  * [This Application Project Structure](#this-application-project-structure)
+    + [Alternative Data Organization Open Source Projects](#alternative-data-organization-open-source-projects)
+    + [How GPT2 Comes Into Play](#how-gpt2-comes-into-play)
+- [Credits](#credits)
+- [License](#license)
 
 # Repos Covered and General Description
 
@@ -420,7 +449,7 @@ So for example, if raw data is inputted into the system, the folder, "/src/stati
 
 Other folders, for example pre-build models which output a result based upon input data, would hold code that points to those models, also stored in a relational database for example, and so on.
 
-## Alternative Data Organization Open Source Projects
+### Alternative Data Organization Open Source Projects
 
 The above described way of working with data only goes so far and is meant for prototyping and getting an application going. There are more sophisticated data management systems which are designed to work with existing cloud services platforms to keep data storage affordable and traceable.
 
@@ -436,10 +465,13 @@ However, there are others:
 * https://polyaxon.com/
 * https://www.seldon.io/
 
+### How GPT2 Comes Into Play
+
+
 
 # Credits
 
 * Created by Patrick Delaney.
-* Thank you to all of the authors and contributors of the various open source dependencies used in this application, including Tensorflow, Transformers, Flask and many more.
+* Thank you to all of the authors and contributors of the various open source dependencies used in this application, including Tensorflow, Transformers, OpenAI, Flask and many more.
 
 # License
