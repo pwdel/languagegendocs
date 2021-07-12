@@ -64,8 +64,8 @@ That being said, there are several, "breadcrumb," applications which preceded th
 
 Note, the following endpoints are ordered in reverse-sophistication, with the lower repos on the list being more basic and, "earlier," in the process:
 
-|              Item              |                                             Link                                             |                                           Description                                          |
-|:------------------------------:|:--------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------:|
+| Item                           | Link                                                                                         | Description                                                                                    |
+|--------------------------------|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
 | flasksecurity                  | [flasksecurity](https://github.com/pwdel/flasksecurity)                                      | Admin dashboard with login approval as well as a review and implementation of a security plan. |
 | textgeneratornotes             | [textgeneratornotes](https://github.com/pwdel/textgeneratornotes)                            | Text generator Google Colab Notebook with experiments.                                         |
 | userlevelmodelsflask           | [userlevelmodelsflask](https://github.com/pwdel/userlevelmodelsflask)                        | Dual user type login functionality.                                                            |
