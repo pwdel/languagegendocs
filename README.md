@@ -51,7 +51,7 @@ Author: Patrick Delaney, July 2021
 
 ### Highlighted Dependencies
 
-[Breakdown of Highlighted dependencies]() shown at the top of this readme file.
+[Breakdown of Highlighted dependencies](/README.md#dependencies) shown at the top of this readme file.
 
 ### Docker
 
