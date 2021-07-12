@@ -54,9 +54,21 @@ Patrick Delaney, July 2021
 
 ### Link to Repo
 
+The main link to the repo being referenced in this documentation is immediately below.
+
 | Item                        | Link                                           | Description                                                                                                                                                                            |
 |-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
+
+That being said, there are several, "breadcrumb," applications which preceded this application, building in various milestones of functionality along the way. For anyone who uses this application but may wish to fork off at a prior point along the build, they may want to reference one of the following endpoints:
+
+|              Item              |                                             Link                                             |                                           Description                                          |
+|:------------------------------:|:--------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------:|
+| flasksecurity                  | [flasksecurity](https://github.com/pwdel/flasksecurity)                                      | Admin dashboard with login approval as well as a review and implementation of a security plan. |
+| textgeneratornotes             | [textgeneratornotes](https://github.com/pwdel/textgeneratornotes)                            | Text generator Google Colab Notebook with experiments.                                         |
+| userlevelmodelsflask           | [userlevelmodelsflask](https://github.com/pwdel/userlevelmodelsflask)                        | Dual user type login functionality.                                                            |
+| postgresloginherokudockerflask | [postgresloginherokudockerflask](https://github.com/pwdel/postgresloginapiherokudockerflask) | Flask application running on Docker, with Postgres and basic login.                            |
+| herokudockerflask              | [herokudockerflask](https://github.com/pwdel/herokudockerflask)                              | Flask on Docker deployed on Heroku                                                             |
 
 <hr>
 
@@ -96,7 +108,7 @@ The main desktop programs required to run this application in development mode a
 
 ### Motivation
 
-The world of statistical language processing has grown significantly in the 2010's with the introduction of cheap deep neural network style learning.
+The world of statistical language processing has grown significantly in the 2010's with the introduction of cheap deep neural network learning. Neural networks allow for the focus to be on, "word embeddings," which basically means assigning codes to words and watch for the frequency with which those codes emerge in proximity to other codes, rather than, "rule based," language processing, which strictly defines the order or grammar of words.
 
 Much of the attention surrounding Natural Language Processing (NLP) has been concentrated around the capability to analyze and sense intent in either open or restricted data environments, either with financial gain ramifications or cost savings ramifications. For example, in healthcare, much diagnosis data is protected from being read or analyzed by humans due to privacy concerns, but data processing may be fair game for the interests of public health improvement. NLP is one of many methods that public health may be analyzed, by reading and analyzing diagnosis information in bulk from text, health outcomes may be improved.
 
@@ -467,7 +479,7 @@ However, there are others:
 
 ### How GPT2 Comes Into Play
 
-
+https://huggingface.co/blog/how-to-generate
 
 # Credits
 
