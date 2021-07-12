@@ -4,10 +4,10 @@
 
 # Language Generator Programs Documentation
 
-
-![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue)
-
-
+| Badge                                                                                                                             | Description / Purpose |
+|-----------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         | Language Models       |
+| ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) | Web App               |
 
 Author: Patrick Delaney, July 2021
 
