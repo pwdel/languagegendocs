@@ -1,8 +1,6 @@
-
-
-
-
 # Language Generator Programs Documentation
+
+Author: Patrick Delaney, July 2021
 
 | Description / Purpose | Badge                                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -12,8 +10,6 @@
 | Database Mapper       | ![](https://img.shields.io/badge/SQLAlchemy-2.4.1-blue)                                                                           |
 | Container Image       | ![](https://img.shields.io/badge/docker--python-3.8--slim-brightgreen)                                                            |
 | Database Adapter      | ![](https://img.shields.io/badge/psycopg2--binary-2.8.6-red)                                                                      |
-
-Author: Patrick Delaney, July 2021
 
 # Table of Contents
 
