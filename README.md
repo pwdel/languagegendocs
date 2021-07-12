@@ -177,10 +177,24 @@ user: admin@test.com
 password: password
 ```
 
-1. Login to Postgres to check database.
-2. Login to flask shell, add admin user with arbitrary password.
+Upon logging in as an administrator, the main dashboard shows a couple different options:
+
+![](/img/admindashboard.png)
+
+However, in order to see any pending issues or data within those options, we have to go back to the main sign-in page and request to sign up either as a sponsor or as an editor.
+
+Logging out and returning to the front page, by clicking the, "Sign Up as Sponsor," link we can go in and create a requested sponsor-user.
+
+![](/img/sponsorsignup.png)
+
+Pending users
+
+![](/img/pendingusers.png)
 
 # How to Use
+
+## Flask Shell
+
 
 # Credits
 
