@@ -25,10 +25,10 @@ Author: Patrick Delaney, July 2021
 |-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
 
-
-    What your application does,
-    Why you used the technologies you used,
-    Some of the challenges you faced and features you hope to implement in the future.
+* Simply put, this application generates text using GPT2 into an organized system that would allow humans to edit the odd, information-less machine generated text into working information. In other words, it's a cyborg text generation application.
+* The app uses a combination of GPT2 and Flask integrated with Postgres to accomplish the above. The reason Flask was used is because of its flexibility and suitability for Machine Learning.
+* The main challenge (but at the same time advantage) in designing this app to the point where it is at is that Flask is more or less a blank slate, which while allowing a developer to implement their own database structures and source code wherever they would like into the ad-hoc platform, also requires a lot of dependencies and structure to be built from scratch. While getting flask up and going is relatively easy to begin with, there is not a lot of documentation on how to really architect many types of applications, so work and thought needs to be put in.
+* In the future this application could be further adapted to write an arbitrarily defined length of text, fine-tuned from a group of text bodies scraped from the web. Basically the idea would be to have a sponsor scrape a bunch of text using a search functionality, auto-generate machine text on a defined knowledgebase, and then pay for a human editor to perfect said text...hence, "cyborg text generation."
 
 ### Main Breakdown of Features
 
@@ -260,13 +260,9 @@ In order for a, "new" user to gain access to a restricted resource, the admin mu
 
 https://user-images.githubusercontent.com/13304149/125322643-9d654980-e303-11eb-8a81-3d6a9d8a0a0f.mp4
 
-## Flask Shell
+# Project Structure for Machine Learning
 
-
-# About the Math Behind the Text Generation
-
-
-#
+##
 
 
 # Credits
