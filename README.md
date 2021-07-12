@@ -25,6 +25,8 @@ Author: Patrick Delaney, July 2021
 |-----------------------------|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | src flask (or source flask) | [src flask](https://github.com/pwdel/srcflask) | A fully functional application which serves as a breadcrumb along the journey to creating a fully secured, deployable language generation application using python-flask and postgres. |
 
+<hr>
+
 * Simply put, this application generates text using GPT2 into an organized system that would allow humans to edit the odd, information-less machine generated text into working information. In other words, it's a cyborg text generation application.
 * The app uses a combination of GPT2 and Flask integrated with Postgres to accomplish the above. The reason Flask was used is because of its flexibility and suitability for Machine Learning.
 * The main challenge (but at the same time advantage) in designing this app to the point where it is at is that Flask is more or less a blank slate, which while allowing a developer to implement their own database structures and source code wherever they would like into the ad-hoc platform, also requires a lot of dependencies and structure to be built from scratch. While getting flask up and going is relatively easy to begin with, there is not a lot of documentation on how to really architect many types of applications, so work and thought needs to be put in.
