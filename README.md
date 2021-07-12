@@ -207,19 +207,26 @@ Pending users
 
 # How to Use
 
-![](/vid/approveuser.webm.mov)
-
-![](/vid/approveuser.mp4)
-
-https://user-images.githubusercontent.com/13304149/125228973-66f3e400-e29b-11eb-9e07-6cd3da01874f.mov
+### Generating Text
 
 
+### Viewing and Editing Previously Created Documents
 
-https://user-images.githubusercontent.com/13304149/125229002-75da9680-e29b-11eb-96d7-7a24b4a2b34b.mov
+
+### Playing the Editor Role
+
+
+### Allowing Pending Users
 
 
 
 ## Flask Shell
+
+
+# About the Math Behind the Text Generation
+
+
+#
 
 
 # Credits
