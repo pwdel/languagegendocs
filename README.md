@@ -39,18 +39,27 @@ Author: Patrick Delaney, July 2021
 * Flash shell to allow arbitrary database commands.
 * SQLAlchemy integration for use with Postgres.
 * Initial non-user state for greater security, e.g. initial user only created on the server itself via human command.
+* CPU based operation of tensorflow - GPU/CUDA not required to generate text - therefore the development version can be run on essentially any modern 64 bit machine which can run docker.
 
 ## System Requirements
 
-### Badges
+### Highlighted Dependencies
 
-https://shields.io/category/dependencies
+[Breakdown of Highlighted dependencies]() shown at the top of this readme file.
 
+### Docker
 
+The main desktop programs required to run this application in development mode are [Docker Engine](https://docs.docker.com/engine/) and [Docker Compose](https://docs.docker.com/compose/), the requirements of which can be read about within the links provided.
+
+* This application was built on an HP-Omen 870-244, 16GB of DDR4, 2.6GHz i7 Processor.
+* With the dependencies listed in this readme file, one sample of machine-generated text could be created within about 30 to 60 seconds of processing time.
+* Note - with GPU/CUDA installed, this time goes down to about 3-5 seconds, however that has not been included in this application.
 
 ## Behind the Scenes
 
 ### Motivation
+
+
 
 ### Why Build this Project
 
@@ -66,7 +75,9 @@ All of the above repos run on Docker. [Installation instructions for Docker can 
 
 ## Quickstart on Ubuntu
 
-I originally developed all of this on Ubuntu. The quick way to get started and install on Ubuntu is the following, as of 11 July 2021:
+### Ubuntu Install
+
+The quick way to get started and install on Ubuntu terminal is the following, as of 11 July 2021:
 
 ```
 # run updates
@@ -120,6 +131,9 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 $ docker-compose --version
 
 ```
+
+### Application Build
+
 Once you have installed docker-compose correctly, you can then run the actual application, by navigating to the root folder within your terminal and running the below command. The root folder is defined as the folder which contains docker-compose.yml:
 
 ```
@@ -179,18 +193,7 @@ Which, if you visit in your browser should bring up the main front-end, endpoint
 
 ![](/img/loginpage.png)
 
-The application is designed to be secured through a multi user-type categorization, which means that an administrator user type has the capability to accept or reject other user types prior to their application access. However in development mode, we have a pre-set administrator user which can be accessed via the /login page with the following credentials:
-
-```
-user: admin@test.com
-password: password
-```
-
-Upon logging in as an administrator, the main dashboard shows a couple different options:
-
-![](/img/admindashboard.png)
-
-However, in order to see any pending issues or data within the, "Signup Requests Dashboard" option, we have to go back to the main sign-in page and request to sign up either as a sponsor or as an editor.
+### Usage of Web Interface in Development Mode
 
 There are a couple of ready-made pre-approved sponsor and editor users on development mode which can be used to log in immediately:
 
@@ -204,35 +207,58 @@ user: editor@test.com
 password: 123456
 
 ```
+#### Generating Text
+
+The sponsor user has the capability to, "create" a Document. A Document includes a title, body and an attached Editor-User. When a Document is created, the machine automatically creates an, "Autodoc," which is an automatically created text snippet, created by GPT-2, reflecting the text of the Document as input.
+
+How Documents/Autodocs get created is shown below. Note that the amount of time it takes for a CPU to create an Autodoc has been sped up significantly. :
+
+https://user-images.githubusercontent.com/13304149/125302671-c7ae0b80-e2f1-11eb-8dbe-c770defa6afa.mp4
+
+#### Viewing and Editing Previously Created Documents
+
+Once a document is created, Sponsor-Users have the capability to go back in and edit the Document Text, Title and Editor-User, as shown below:
+
+https://user-images.githubusercontent.com/13304149/125322446-6a22ba80-e303-11eb-9580-1784bccc8858.mp4
+
+
+#### Playing the Editor Role
+
+Editor-Users are simply secondary accounts which do not have access to the Autodoc capability, but have the ability to edit the Document text and title, if assigned by a Sponsor, as shown below.
+
+https://user-images.githubusercontent.com/13304149/125322553-8888b600-e303-11eb-8b1d-49bbf5f033c2.mp4
+
+### Role Authentication
+
+The application is designed to be secured through a multi user-type categorization, which means that an administrator user type has the capability to accept or reject other user types prior to their application access. In development mode, we have a pre-set administrator user which can be accessed via the /login page with the following credentials:
+
+```
+user: admin@test.com
+password: password
+```
+
+Upon logging in as an administrator, the main dashboard shows a couple different options:
+
+![](/img/admindashboard.png)
+
+However, in order to see any pending issues or data within the, "Signup Requests Dashboard" option, we have to go back to the main sign-in page and request to sign up either as a sponsor or as an editor.
 
 Logging out and returning to the front page, by clicking the, "Sign Up as Sponsor," link we can go in and create a requested sponsor-user.
 
 ![](/img/sponsorsignup.png)
 
-Pending users
+Pending users can be viewed on the, "Signup Requests Dashboard."
 
 ![](/img/pendingusers.png)
 
-# How to Use
-
-### Generating Text
-
-https://user-images.githubusercontent.com/13304149/125302671-c7ae0b80-e2f1-11eb-8dbe-c770defa6afa.mp4
-
-### Viewing and Editing Previously Created Documents
-
-https://user-images.githubusercontent.com/13304149/125322446-6a22ba80-e303-11eb-9580-1784bccc8858.mp4
-
-
-### Playing the Editor Role
-
-https://user-images.githubusercontent.com/13304149/125322553-8888b600-e303-11eb-8b1d-49bbf5f033c2.mp4
 
 ### Allowing Pending Users
 
+When a user signs up, they do not automatically have access to the application. The application protects its resources by only allowing certain paths to be accessible by certain user types.
+
+In order for a, "new" user to gain access to a restricted resource, the admin must go in and, "Approve," them as a user, as shown in the below video.
+
 https://user-images.githubusercontent.com/13304149/125322643-9d654980-e303-11eb-8a81-3d6a9d8a0a0f.mp4
-
-
 
 ## Flask Shell
 
@@ -244,5 +270,8 @@ https://user-images.githubusercontent.com/13304149/125322643-9d654980-e303-11eb-
 
 
 # Credits
+
+* Created by Patrick Delaney.
+* Thank you to all of the authors and contributors of the various open source dependencies used in this application, including Tensorflow, Transformers, Flask and many more.
 
 # License
