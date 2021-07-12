@@ -5,9 +5,7 @@
 # Language Generator Programs Documentation
 
 
-
-<img src="" alt="" data-canonical-src="https://img.shields.io/badge/flask-v1.1.2-blue" style="max-width:100%;">
-
+https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask
 
 
 
