@@ -206,6 +206,8 @@ Pending users
 
 # How to Use
 
+![](/vid/approveuser.webm.mov)
+
 ## Flask Shell
 
 
