@@ -4,10 +4,10 @@
 
 # Language Generator Programs Documentation
 
-| Badge                                                                                                                             | Description / Purpose |
-|-----------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         | Language Models       |
-| ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) | Web App               |
+| Description / Purpose | Badge                                                                                                                             |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Language Models       | ![](https://img.shields.io/badge/transformers-4.5.1-blue)                                                                         |
+| Web App               | ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) |
 
 Author: Patrick Delaney, July 2021
 
