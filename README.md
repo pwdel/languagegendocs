@@ -1,6 +1,8 @@
 # Language Generator Programs Documentation
 
-Author: Patrick Delaney, July 2021
+##### Author
+
+Patrick Delaney, July 2021
 
 ##### Dependencies
 
@@ -65,15 +67,34 @@ The main desktop programs required to run this application in development mode a
 
 ### Motivation
 
+The world of statistical language processing has grown significantly in the 2010's with the introduction of cheap deep neural network style learning.
 
+Much of the attention surrounding Natural Language Processing (NLP) has been concentrated around the capability to analyze and sense intent in either open or restricted data environments, either with financial gain ramifications or cost savings ramifications. For example, in healthcare, much diagnosis data is protected from being read or analyzed by humans due to privacy concerns, but data processing may be fair game for the interests of public health improvement. NLP is one of many methods that public health may be analyzed, by reading and analyzing diagnosis information in bulk from text, health outcomes may be improved.
+
+The reverse of language processing is language generation. If a sufficient knowledgebase of words used in particular situations can be obtained, then sentences may be written responding to cues based upon statistical models. Today these models may not contain much substantial information, and may not be able to diagnose a problem, healthcare-related or otherwise, but in the future, with sufficient rule bases and proper text generation techniques, at the very least text generation may potentially be able to serve as a labor saving aid to humans, allowing authors to select and edit pre-written paragraphs around topic matter, rather than having a person write everything themselves.
 
 ### Why Build this Project
 
+Since text generation is such an interesting area, and in particular within the healthcare domain, it makes sense to open source some concepts using standardized web and server technologies available today so that others may be able to build more sophisticated applications in the future.
+
 ### What Problems this Solves
+
+There are many text generation applications, and at the simpliest level, this application is simply a wrapper for GPT2 at this point. The purpose of this application is not to re-invent text generation, but rather to suggest a direction for managing three key challenges:
+
+1. The human interaction between automatically generated texts, including a, "generating" function which is wholly machine-generated and an "editing" function done by humans.
+
+2. The challenge of organizing a set of application folders into a structure which mimics data science.  More specifically than that, Python-Flask tends to be a standard way to build sophisticated machine learning applications today. However it is a very open, non-strictly architectured platform, it is more or less just scaffolding. This project attempts to architect a helpful folder structure which mimics good data science project design, basically putting the machine learning source code in an appropriate server-side location and laying out a philosophy for how to organize folders and files that interact with data science projects as they scale.
+
+3. The challenge of resource protection and security is addressed by an administrative function. Access to sophisticated GPUs at least at present is not free, or at least not in a custom application sense. Working with expensive computing resources requires some type of way to administrate and protect said resources so they are not completely open to the world.
 
 ### Learned Along the Way
 
+Some helpful tips I learned while building this project:
 
+* Design database relational models in a way that will prevent you from having to do custom configuration.  If you can link tables, link them.
+* For moving to production, sometimes there may be environmental variable name conflicts, where the new production system might demand that it uses a certain variable name and value, and this could cause problems in running the application.
+* Using a cheap, 3-year old GPU is roughly 10 times faster than using a CPU for two sentences of generated text on GPT2.
+* Sometimes there are variable name conflicts when moving to production from development, where a server, such as Heroku, has a fixed environmental name that it may use for something, that a dependency may also use as a convention. There are hacks to get around this which had to be employed to push an older version of this application to production on Heroku. Watch out!
 
 # Getting Started - How to Install and Run
 
@@ -268,7 +289,152 @@ https://user-images.githubusercontent.com/13304149/125322643-9d654980-e303-11eb-
 
 # Project Structure for Machine Learning
 
-##
+## Word on Monolithic Applications
+
+This application is monolithic, in that it is designed to completely run and fit on one server. Technically, there are two, "containers" - one for the application itself, and one for the database, postgres.
+
+As an application grows in size, or as it becomes more of an, "enterprise grade," application with teams working through it, it starts to take more of the shape of a graph, with different parts of the application doing different things in various containers, essentially using a, "microservices," architecture.
+
+## This Application Project Structure
+
+The main project structure for this application, including the web application, but not zooming in on the data science portion of the project looks like the following:
+
+```
+├── .env.dev
+
+├── .env.prod
+
+├── .env.prod.db
+
+├── .gitignore
+
+├── docker-compose.prod.yml
+
+├── docker-compose.yml
+
+└── services
+
+	├── nginx
+
+	│   	├── Dockerfile
+
+	│   	└── nginx.conf
+
+	└── web
+
+	    	├── Dockerfile
+
+    		├── Dockerfile.prod
+
+    		├── entrypoint.prod.sh
+
+    		├── entrypoint.sh
+
+    		├── manage.py
+
+     		├── requirements.txt
+
+    		├── project
+
+    			├── __init__.py
+
+    			├── assets.py
+
+    			├── auth.py
+
+    			├── forms.py
+
+    			├── models.py
+
+    			├── routes.py
+
+    			├── config.py
+
+    			└── static
+
+	    			├── /css
+
+	    			├── /dist
+
+	    			├── /img
+
+	    			├── /src
+
+		    			└── js
+
+	    			└── style.css	    			
+
+    			└── /templates
+
+
+```
+The data science portion of the project goes under static/src, even though the data itself is not static, the code which manipulates the data is static.
+
+The paradigm here is that all of the, "web" type stuff which touches HTML and controls routes should remain within the main web-type folders that are familiar to web developers, such as the assets, auth, routes, config and models.
+
+The models may lay out the data within relational data tables, but the static/src is where the actual data processing goes.
+
+```
+└── src
+
+│	├── features
+
+│	├── preperation
+
+│	├── preprocessing
+
+│	├── evaluation
+
+│	└──	js
+
+└── tests
+
+│	└──	unit_tests
+
+└── models
+
+│	├── seedmodels
+
+│	└──	retrainedmodels
+
+└── data
+
+│	├──	raw_data
+
+│	├──	processed_data
+
+│	└──	user_input_data
+
+└── pipeline
+
+│	└──	model_retraining_automation_scripts
+
+└── docs
+
+	├──	Documentation
+
+	└──	Notebooks
+
+```
+So for example, if raw data is inputted into the system, the folder, "/src/static/data/raw_data" does not contain the actual data itself, e.g. the data is not uploaded directly onto the server, but rather that folder would contain some file, raw_data_control.py or something similar, which would manipulate a relational database or otherwise to control where that data goes.
+
+Other folders, for example pre-build models which output a result based upon input data, would hold code that points to those models, also stored in a relational database for example, and so on.
+
+## Alternative Data Organization Open Source Projects
+
+The above described way of working with data only goes so far and is meant for prototyping and getting an application going. There are more sophisticated data management systems which are designed to work with existing cloud services platforms to keep data storage affordable and traceable.
+
+The best one appears to be the following:
+
+* [Data Version Control](https://github.com/iterative/dvc)
+
+However, there are others:
+
+
+* Quilt PyPi or [Quilt Github](https://github.com/quiltdata/quilt) is designed to create versioned datasets with S3.
+* https://vespa.ai/ (also open source)
+* https://polyaxon.com/
+* https://www.seldon.io/
 
 
 # Credits
