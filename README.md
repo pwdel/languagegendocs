@@ -13,7 +13,7 @@ Patrick Delaney, July 2021
 | Web App               | ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) [![](https://img.shields.io/badge/flask-v1.1.2-blue)](https://flask.palletsprojects.com/en/2.0.x/) | |
 | Database Mapper       | [![](https://img.shields.io/badge/SQLAlchemy-2.4.1-blue)](https://www.sqlalchemy.org/)                                            |      |
 | Container Image       | [![](https://img.shields.io/badge/docker--python-3.8--slim-brightgreen)](https://github.com/docker-library/python/blob/dbf2083938bd54ddb0f8697c177d5ccfc927f20f/3.8/buster/slim/Dockerfile)       | |
-| Database Adapter      | [![](https://img.shields.io/badge/psycopg2--binary-2.8.6-red)](https://pypi.org/project/psycopg2-binary/) | Do not use binary for production. |
+| Database Adapter      | [![](https://img.shields.io/badge/psycopg2--binary-2.8.6-red)](https://pypi.org/project/psycopg2-binary/2.8.6/) | Do not use binary for production. |
 
 # Table of Contents
 
