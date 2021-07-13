@@ -8,7 +8,7 @@ Patrick Delaney, July 2021
 
 | Description / Purpose | Badge                                                                                                                             | Note |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|------|
-| Language Models       | ![(https://img.shields.io/badge/transformers-4.5.1-blue)](https://github.com/huggingface/transformers)                                                                         | |
+| Language Models       | [![](https://img.shields.io/badge/transformers-4.5.1-blue)](https://github.com/huggingface/transformers)                                                                         | |
 | DNN Toolkit           | ![](https://img.shields.io/badge/tensorflow-2.2-blue)                                                                             | |
 | Web App               | ![](https://img.shields.io/github/stars/pallets/flask?label=flask&logo=flask) ![](https://img.shields.io/badge/flask-v1.1.2-blue) | |
 | Database Mapper       | ![](https://img.shields.io/badge/SQLAlchemy-2.4.1-blue)                                                                           | |
