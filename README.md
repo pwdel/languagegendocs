@@ -344,72 +344,38 @@ The main project structure for this application, including the web application, 
 
 ```
 ├── .env.dev
-
 ├── .env.prod
-
 ├── .env.prod.db
-
 ├── .gitignore
-
 ├── docker-compose.prod.yml
-
 ├── docker-compose.yml
-
 └── services
-
 	├── nginx
-
 	│   	├── Dockerfile
-
 	│   	└── nginx.conf
-
 	└── web
-
 	    	├── Dockerfile
-
     		├── Dockerfile.prod
-
     		├── entrypoint.prod.sh
-
     		├── entrypoint.sh
-
     		├── manage.py
-
      		├── requirements.txt
-
     		├── project
-
     			├── __init__.py
-
     			├── assets.py
-
     			├── auth.py
-
     			├── forms.py
-
     			├── models.py
-
     			├── routes.py
-
     			├── config.py
-
     			└── static
-
 	    			├── /css
-
 	    			├── /dist
-
 	    			├── /img
-
 	    			├── /src
-
 		    			└── js
-
-	    			└── style.css	    			
-
-    			└── /templates
-
-
+	    			      └── style.css	    			
+    			           └── /templates
 ```
 The data science portion of the project goes under static/src, even though the data itself is not static, the code which manipulates the data is static.
 
@@ -419,44 +385,25 @@ The models may lay out the data within relational data tables, but the static/sr
 
 ```
 └── src
-
-│	├── features
-
-│	├── preperation
-
-│	├── preprocessing
-
-│	├── evaluation
-
-│	└──	js
-
-└── tests
-
-│	└──	unit_tests
-
-└── models
-
-│	├── seedmodels
-
-│	└──	retrainedmodels
-
-└── data
-
-│	├──	raw_data
-
-│	├──	processed_data
-
-│	└──	user_input_data
-
-└── pipeline
-
-│	└──	model_retraining_automation_scripts
-
-└── docs
-
-	├──	Documentation
-
-	└──	Notebooks
+    │	├── features
+    │	├── preperation
+    │	├── preprocessing
+    │	├── evaluation
+    │	└──	js...
+    └── tests
+    │	└──	unit_tests
+    └── models
+    │	├── seedmodels
+    │	└──	retrainedmodels
+    └── data
+    │	├──	raw_data
+    │	├──	processed_data
+    │	└──	user_input_data
+    └── pipeline
+    │	└──	model_retraining_automation_scripts
+    └── docs
+	    ├──	Documentation
+	    └──	Notebooks
 
 ```
 So for example, if raw data is inputted into the system, the folder, "/src/static/data/raw_data" does not contain the actual data itself, e.g. the data is not uploaded directly onto the server, but rather that folder would contain some file, raw_data_control.py or something similar, which would manipulate a relational database or otherwise to control where that data goes.
@@ -473,11 +420,12 @@ The best one appears to be the following:
 
 However, there are others:
 
-
 * Quilt PyPi or [Quilt Github](https://github.com/quiltdata/quilt) is designed to create versioned datasets with S3.
-* https://vespa.ai/ (also open source)
-* https://polyaxon.com/
-* https://www.seldon.io/
+* [VespaAI](https://vespa.ai/) (also open source)
+* [Polyaxon](https://polyaxon.com/)
+* [Seldon.io](https://www.seldon.io/)
+
+There is also an alternative [cookie cutter data science project structure format](https://github.com/drivendata/cookiecutter-data-science), although not integrated with flask.
 
 ### How GPT2 Comes Into Play
 
@@ -495,7 +443,7 @@ There are three ways of talking about how a language model can be dealt with:
 
 We are merely calling the model, not training or fine tuning it.
 
-* "Training," GPT2 costed tens of thousands of dollars in 2018/2019, and involved inputting upwards of 1.5 billion parameters (basically many bodies of text from web sources) into a massive neural network to output the different GPT2 models.
+* "Training," GPT2 costed an estimated tens of thousands of dollars in 2018/2019, and involved inputting upwards of 1.5 billion parameters (basically many bodies of text from web sources) into a massive neural network to output the different GPT2 models.
 * "Fine Tuning," involves taking the, "Head Model," (of TFGPT2LMHeadModel namesake) which is really a dense system of decoders, and adjusting that based upon a new set of input text. This fine tuning may take a significant amount of resources, perhaps better to run using GPUs rather than a CPU, but does not necessarily require tens of thousands of dollars of resources (as of 2020).
 * Evoking a model requires adjusting the Head Model similar to "Fine Tuning," but is not as resource intensive, particularly after the first call. It's basically just a way of applying the model against a small number of words.
 
@@ -507,9 +455,19 @@ So in short, our application evokes the GPT2-small model with a header, without 
 
 #### Rough Outline of the Math
 
+When evoking GPT2, there are a few options for which head model algorithm type to use to search for the next word in a sequence. One option is, "Greedy Search," which essentially just picks the next highest probability word after the previous word (or sequence of words).  For example:
+
 ![](/img/greedy_search.png)
 
+In the above scenario, the string of words put together would be, "the nice woman," because those words are the next highest probability at each step.
+
+Beam search instead looks at an entire sequence of words and optimizes for the highest sequence of outputs, for example:
+
 ![](/img/beam_search.png)
+
+In the above scenario, the string of words put together would be, "the dog has," because the values ascribed to the sequence of words would sum up to 0.5+0.9 = 1.4 whereas with Greedy Search, "the nice woman," would have only scored 0.5+0.4 = 0.9.
+
+Greedy search tends to be much more repetitive than beam search and is of, "higher quality." The flasksrc application used beam search, however there are other options for models which produce arguably better results, including top-k sampling and top-p sampling, discussed at length in the below article.
 
 [Image credit and reference](https://huggingface.co/blog/how-to-generate)
 
@@ -519,3 +477,5 @@ So in short, our application evokes the GPT2-small model with a header, without 
 * Thank you to all of the authors and contributors of the various open source dependencies used in this application, including Tensorflow, Transformers, OpenAI, Flask and many more.
 
 # License
+
+TBD
