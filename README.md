@@ -491,11 +491,25 @@ There are three ways of talking about how a language model can be dealt with:
 
 1. Training a model.
 2. Fine Tuning a model.
-3. Calling or Envoking a model.
+3. Calling or Evoking a model.
 
 We are merely calling the model, not training or fine tuning it.
 
-Search methods
+* "Training," GPT2 costed tens of thousands of dollars in 2018/2019, and involved inputting upwards of 1.5 billion parameters (basically many bodies of text from web sources) into a massive neural network to output the different GPT2 models.
+* "Fine Tuning," involves taking the, "Head Model," (of TFGPT2LMHeadModel namesake) which is really a dense system of decoders, and adjusting that based upon a new set of input text. This fine tuning may take a significant amount of resources, perhaps better to run using GPUs rather than a CPU, but does not necessarily require tens of thousands of dollars of resources (as of 2020).
+* Evoking a model requires adjusting the Head Model similar to "Fine Tuning," but is not as resource intensive, particularly after the first call. It's basically just a way of applying the model against a small number of words.
+
+The [GPT2 Model](https://huggingface.co/transformers/model_doc/gpt2.html#tfgpt2model) - is defined as the bare GPT2 Model transformer outputting raw hidden-states without any specific head on top. In other words, this is the model output of the, "Training," stage, straight from OpenAI.
+
+There are several sizes of "architectures" of GPT2 Models available, including 1558M (extra large), 774M (large), 355M (medium), 124M (small).  Using [Transformers Configuration](https://huggingface.co/transformers/model_doc/gpt2.html#gpt2config), one can select parameters which will be equivalent to the different sizes of models, but without selecting any parameters, which we did not, it defaults to small.
+
+So in short, our application evokes the GPT2-small model with a header, without any fine tuning, and looks at the few words which were put into the, "text" body and computes the next few words in a sentence or two.
+
+#### Rough Outline of the Math
+
+![](/img/greedy_search.png)
+
+![](/img/beam_search.png)
 
 [Image credit and reference](https://huggingface.co/blog/how-to-generate)
 
