@@ -481,7 +481,23 @@ However, there are others:
 
 ### How GPT2 Comes Into Play
 
-https://huggingface.co/blog/how-to-generate
+This application does not use, "All of GPT2," it uses a, "GPT2 head model," as well as a, "GPT2 tokenizer," which is available through the "transformers," dependency by huggingface.
+
+The meat of the actual code for that can be found here in this [autodockwriter.py](https://github.com/pwdel/srcflask/blob/main/services/web/project/static/src/evaluation/autodocwriter.py) file.
+
+[GPT2 as a whole](https://en.wikipedia.org/wiki/GPT-2) is a set of parameters which have been trained based upon a, "transformer model" type algorithm on a large corpus of text gathered from the web. When you use the huggingface GPT2 head model, it's not some kind of API access to a cloud service spitting out an answer, it's a slice of a much larger GPT2 model (of which there are three sizes). The head model has essentially been, "map reduced," into a pattern, and we're merely, "calling," on that model.
+
+There are three ways of talking about how a language model can be dealt with:
+
+1. Training a model.
+2. Fine Tuning a model.
+3. Calling or Envoking a model.
+
+We are merely calling the model, not training or fine tuning it.
+
+Search methods
+
+[Image credit and reference](https://huggingface.co/blog/how-to-generate)
 
 # Credits
 
